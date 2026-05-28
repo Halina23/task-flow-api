@@ -4,7 +4,6 @@ pipeline {
     environment {
         IMAGE_NAME = 'taskflow-api'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
-        DOCKERHUB_USER = credentials('dockerhub-user')
         DOCKERHUB_PASS = credentials('dockerhub-password')
     }
 
