@@ -1,0 +1,36 @@
+# ── Segredos — NUNCA versionar ───────────────────
+.env
+*.pem
+*.key
+secrets/
+
+# ── Python ───────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# ── Docker ───────────────────────────────────────
+*.log
+
+# ── Jenkins ──────────────────────────────────────
+jenkins/jenkins_home/
+
+# ── Terraform ────────────────────────────────────
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+
+# ── IDEs ─────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
