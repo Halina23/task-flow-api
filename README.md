@@ -46,4 +46,18 @@ terraform plan
 terraform apply
 ```
 
-### Projeto apenas para teste
+### ## Aprendizados do projeto
+
+Neste projeto, pratiquei um fluxo DevOps local completo, passando por versionamento com Git/GitHub, execução de infraestrutura com Terraform, criação e execução de containers com Docker Compose e automação de pipeline com Jenkins.
+
+Também trabalhei com variáveis de ambiente usando `.env`, integração com banco PostgreSQL, execução de testes automatizados e troubleshooting de erros reais durante o processo.
+
+Ferramentas utilizadas:
+- Git e GitHub
+- Docker e Docker Compose
+- Terraform
+- Jenkins
+- FastAPI
+- PostgreSQL
+- Prometheus
+- Grafana
