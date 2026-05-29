@@ -1,5 +1,5 @@
 configuration-as-code
-configuration-as-code-support
+# configuration-as-code-support
 cloudbees-folder
 antisamy-markup-formatter
 build-timeout
@@ -18,4 +18,4 @@ gitlab-plugin
 git
 mailer
 email-ext
-slackc
+# slackc
