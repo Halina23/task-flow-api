@@ -1,8 +1,11 @@
+version: '3.8'
+
 services:
   postgres:
     image: postgres:16-alpine
     container_name: taskflow-postgres
     restart: unless-stopped
+    env_file: .env
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
@@ -19,6 +22,7 @@ services:
     build: .
     container_name: taskflow-app
     restart: unless-stopped
+    env_file: .env
     ports:
       - "${APP_PORT}:8000"
     environment:
@@ -44,6 +48,7 @@ services:
     image: grafana/grafana:latest
     container_name: taskflow-grafana
     restart: unless-stopped
+    env_file: .env
     ports:
       - "3000:3000"
     environment:
@@ -56,9 +61,12 @@ services:
       - prometheus
 
   jenkins:
-    image: jenkins/jenkins:lts
+    build:
+      context: .
+      dockerfile: jenkins/Dockerfile
     container_name: taskflow-jenkins
     restart: unless-stopped
+    env_file: .env
     user: root
     ports:
       - "8081:8080"
@@ -66,6 +74,11 @@ services:
     volumes:
       - jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      JENKINS_USER: ${JENKINS_USER}
+      JENKINS_PASSWORD: ${JENKINS_PASSWORD}
+      JENKINS_EMAIL: ${JENKINS_EMAIL}
+      JENKINS_EMAIL_PASSWORD: ${JENKINS_EMAIL_PASSWORD}
 
 volumes:
   postgres_data:
